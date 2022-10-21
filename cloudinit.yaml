@@ -1,0 +1,9 @@
+#cloud-config 
+users:
+  - name: root
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+chpasswd:
+  list: |
+    root:nutanix/4u
+  expire: False
+ssh_pwauth: true"
