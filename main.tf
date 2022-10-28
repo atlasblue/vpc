@@ -19,7 +19,7 @@ resource "nutanix_vpc" "vpc_tf" {
   name = "YM-VPC-DEV-TF"
 
   external_subnet_reference_name = [
-    var.EXTERNAL_VLAN
+    var.EXTERNAL_SUBNET
   ]
 }
   
@@ -43,7 +43,7 @@ resource "nutanix_subnet" "subnetOverlay" {
 }
 
 data "nutanix_subnet" "subnet" {
-subnet_name = var.EXTERNAL_VLAN
+subnet_name = var.EXTERNAL_SUBNET
 }
 
 #################################################
@@ -122,7 +122,7 @@ resource "nutanix_virtual_machine" "vm_tf" {
 #################################################
 
 resource "nutanix_floating_ip" "fip" {
-  external_subnet_reference_name = var.EXTERNAL_VLAN
+  external_subnet_reference_name = var.EXTERNAL_SUBNET
 
   vm_nic_reference_uuid = nutanix_virtual_machine.vm_tf.nic_list[0].uuid
   

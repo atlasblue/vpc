@@ -8,7 +8,7 @@
     * Prism Central endpoint/IP address <br/>
     * Prism Central username <br/>
     * Prism Central password <br/>
-    * EXTERNAL VLAN Name <br/>
+    * EXTERNAL Subnet Name <br/>
 - terraform init <br />
 - terraform plan <br />
 - terraform apply -auto-approve <br />
