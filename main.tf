@@ -152,7 +152,6 @@ resource "null_resource" "installweb" {
         password = "nutanix/4u"
       }  
       inline = [
-          "sudo yum update -y",
           "sudo yum install nginx -y",
           "sudo systemctl start nginx",
           "sudo systemctl enable nginx",
