@@ -64,9 +64,9 @@ resource "nutanix_static_routes" "static_routes" {
 # CREATE VM
 #################################################
 
-resource "nutanix_image" "centos8" {
-  name = "centos8"
-  source_uri  = "http://10.42.194.11/workshop_staging/CentOS7.qcow2"
+resource "nutanix_image" "centos7" {
+  name = "centos7"
+  source_uri  = "http://download.nutanix.com/Calm/Centos7-Base.qcow2"
   description = "centos 7 image"
 }
 
@@ -85,7 +85,7 @@ resource "nutanix_virtual_machine" "vm_tf" {
   disk_list {
     data_source_reference = {
       kind = "image"
-      uuid = nutanix_image.centos8.id
+      uuid = nutanix_image.centos7.id
     }
     device_properties {
       disk_address = {
